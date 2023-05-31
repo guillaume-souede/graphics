@@ -11,7 +11,7 @@
 #' inserting figures with \code{knitr::include_graphics}.
 #'
 #' @details Read more about using the function at
-#'   \url{http://bit.ly/include_graphics2}.
+#'   \url{http://bit.ly/web.images}.
 #'
 #' @param path String. Path to a figure to be included. Can be either
 #'   an URL or a local path.
@@ -29,11 +29,11 @@
 #' gif_url <- 'https://media.giphy.com/media/k3dcUPvxuNpK/giphy.gif'
 #'
 #' \dontrun{
-#' include_graphics2(gif_url, alt_path = png_url)
+#' web.images(gif_url, alt_path = png_url)
 #' }
 #'
 #' @export
-include_graphics2 <- function(path, alt_path = NULL, handler = function(path) knitr::asis_output(paste('View', tools::file_ext(path), 'at', path)), ...) {
+web.images <- function(path, alt_path = NULL, handler = function(path) knitr::asis_output(paste('View', tools::file_ext(path), 'at', path)), ...) {
   if (knitr::is_latex_output()) {
     return(include_graphics_latex(path, alt_path, handler, ...))
   } else {
